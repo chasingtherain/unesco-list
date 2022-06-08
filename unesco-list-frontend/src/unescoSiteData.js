@@ -391,12 +391,6 @@ const unescoSiteData = [
     },
     {
       "admin_region": "Shaanxi",
-      "site": "Silk Roads: the Routes Network of Chang'an-Tianshan Corridor",
-      "site_id": 1442,
-      "trans_province": 1
-    },
-    {
-      "admin_region": "Shaanxi",
       "site": "Mausoleum of the First Qin Emperor",
       "site_id": 441,
       "trans_province": 0
