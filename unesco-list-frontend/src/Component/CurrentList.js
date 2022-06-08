@@ -4,7 +4,7 @@ const CurrentList = ({currentRegion,unescoSiteData,handleButtonClick,visitedSite
     // console.log(unescoSiteData);
     let filteredByRegion = unescoSiteData.filter(object => object["admin_region"] === currentRegion)
     let uniqueSite = [...new Set(unescoSiteData.map(object => object.site))].sort()
-    console.log(filteredByRegion,unescoSiteData,uniqueSite);
+    // console.log(filteredByRegion,unescoSiteData,uniqueSite);
     if (currentRegion === "All"){
         return(
             <div>

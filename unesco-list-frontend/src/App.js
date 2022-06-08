@@ -14,19 +14,18 @@ function App() {
   }
 
   const handleButtonClick = (e) => {
-    console.log("clicked", e.currentTarget)
+    // console.log("clicked", e.currentTarget)
     // console.log(buttonState);
     if(!visitedSite.includes(e.target.id)) setVisitedSite(visitedSite.concat(e.target.id))
     else {
       removeSiteFromList(e.target.id)
     }
-    
   }
   
   const removeSiteFromList = (site) => {
     let removedSiteIndex = visitedSite.indexOf(site)
     let tempVisitedSite = visitedSite.slice(0,removedSiteIndex).concat(visitedSite.slice(removedSiteIndex+1))
-    console.log(visitedSite, tempVisitedSite);
+    // console.log(visitedSite, tempVisitedSite);
     setVisitedSite(tempVisitedSite)
   }
 
@@ -38,7 +37,17 @@ function App() {
   const [currentRegion, setCurrentRegion] = useState("All")
 
   //sets unesco sites already visited by user
-  const [visitedSite, setVisitedSite] = useState([])
+  const [visitedSite, setVisitedSite] = useState(() => {
+    const localData = localStorage.getItem("visitedSite")
+    return (localData) ? JSON.parse(localData) : []
+  })
+
+  // effect runs each time visitedSite updates
+  useEffect(() =>{
+    localStorage.setItem("visitedSite",JSON.stringify(visitedSite))
+  }
+  ,[visitedSite])
+
 
   const [buttonState, setButtonState] = useState(false)
 
