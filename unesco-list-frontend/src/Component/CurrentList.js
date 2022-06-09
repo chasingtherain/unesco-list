@@ -5,14 +5,21 @@ const CurrentList = ({currentRegion,unescoSiteData,handleButtonClick,visitedSite
     let filteredByRegion = unescoSiteData.filter(object => object["admin_region"] === currentRegion)
     let uniqueSite = [...new Set(unescoSiteData.map(object => object.site))].sort()
     // console.log(filteredByRegion,unescoSiteData,uniqueSite);
+
+    const listStyle = {
+        listStyle: "none",
+        marginLeft:-10,
+        padding:0
+      };
+
     if (currentRegion === "All"){
         return(
             <div>
-                <h1>All UNESCO sites in China</h1>
+                <h1>UNESCO sites in China</h1>
                 <ul>
                     {
                        uniqueSite.map(
-                           site => <li>{site} <Button site={site} handleButtonClick={handleButtonClick} visitedSite={visitedSite}/> </li> 
+                           site => <li style={listStyle}>{site} <Button site={site} handleButtonClick={handleButtonClick} visitedSite={visitedSite}/> </li> 
                        )
                     }
                 </ul>

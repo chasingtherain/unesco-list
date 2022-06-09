@@ -7,20 +7,18 @@ const Statistics = ({currentRegion,unescoSiteData,visitedSite}) => {
     if(currentRegion === "All"){
         return(
             <div>
-                <h1>Statistics</h1>
-                <p>You have visited <strong>{visitedSite.length}/56</strong> of UNESCO sites in <strong>China</strong></p>
+                <p>You have visited <strong>{visitedSite.length}/56</strong> UNESCO sites in <strong>China</strong></p>
             </div>
         )
     }
     return(
             <div>
-                <h1>Statistics</h1>
                 {
                     (numOfSitesInRegion) ? 
-                    <p>You have visited <strong>{visitedSiteInRegion.length}/{numOfSitesInRegion}</strong> of UNESCO sites in <strong>{currentRegion}</strong></p>
+                    <p>You have visited <strong>{visitedSiteInRegion.length}/{numOfSitesInRegion}</strong> UNESCO sites in <strong>{currentRegion}</strong></p>
                     : <p>No UNESCO site found in this region yet, we hope there will be one in the future</p>
                 }
-                <p>You have visited <strong>{visitedSite.length}/56</strong> of UNESCO sites in <strong>China</strong></p>
+                <p>You have visited <strong>{visitedSite.length}/56</strong> UNESCO sites in <strong>China</strong></p>
             </div>
         )
 }

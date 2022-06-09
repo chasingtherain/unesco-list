@@ -3,12 +3,7 @@
 const Search = ({regionList, handleSelectionChange}) => {
     return(
         <div>
-            <h1>Select a region</h1>
-            <select name="province" id="province" onChange={handleSelectionChange}>
-                {
-                    regionList.map(province => <option value={province}>{province}</option>)
-                }
-            </select>
+            <h3>Select a region <select name="province" id="province" onChange={handleSelectionChange}>{regionList.map(province => <option value={province}>{province}</option>)}</select></h3>
         </div>
     )
 }
